@@ -1,19 +1,13 @@
-2024/7/18日修改
+Function Descriptions:
 
-函数说明：
+download_data.py: Uses the HAPI toolkit to download absorption line parameters for various gases within a specified spectral range.
+main.py: Uses the HAPI toolkit to plot transmittance and optical thickness under the conditions of the 1976 U.S. Standard Atmosphere.
+File Description:
 
-download_data.py：利用HAPI工具包下载了各气体在某光谱范围内的吸收线参数
+tape6_1976: Data sourced from MODTRAN.
+Steps:
 
-main.py：利用HAPI工具包绘制了美国1976标准大气条件下的透过率和光学厚度
-
-文件说明：
-
-tape6_1976来自MODTRAN
-
-步骤：
-1. 运行download_data.py
-2. 运行main.py
-
-可以实现以下效果
+Run download_data.py.
+Run main.py.
 
 ![Transmittance](Transmittance.png)

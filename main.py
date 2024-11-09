@@ -1,6 +1,7 @@
 from hapi import *
 import numpy as np
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import savefig
 # 需要修改的参数
@@ -64,26 +65,28 @@ for i in range(len(gases)):
     df_trans[gas] = trans
 print(df_optical_depth)
 # # 绘制图像
+fs = 8 # 字体大小
+matplotlib.rcParams.update({'font.size': fs})
 width_in_cm = 15 # 图像宽度
 height_in_cm = 11 # 图像高度
-fs = 12 # 字体大小
+
 
 # 绘制光学厚度
 fig = plt.figure(figsize=(width_in_cm / 2.54,height_in_cm /2.54))  # 这里的单位是 英寸 inch，1 in = 2.54 cm
 plt.plot(1e7 / nu, df_optical_depth, ls="-", lw=2) # lw 控制线条的宽度
-plt.legend(gases,fontsize=fs) #打出图例
+plt.legend(gases) #打出图例
 plt.yscale('log')
-plt.xlabel('Wavelength (nm)',fontsize=fs)
-plt.ylabel('Optical depth',fontsize=fs)
-savefig('optical_depth.png', dpi=300)
+plt.xlabel('Wavelength (nm)')
+plt.ylabel('Optical depth')
+savefig('optical_depth.png', dpi=300, bbox_inches='tight')
 
 # 绘制透过率
 fig = plt.figure(figsize=(width_in_cm / 2.54,height_in_cm /2.54))  # 这里的单位是 英寸 inch，1 in = 2.54 cm
 plt.plot(1e7 / nu, df_trans, ls="-", lw=2) # lw 控制线条的宽度
-plt.legend(gases,fontsize=fs) #打出图例
-plt.xlabel('Wavelength (nm)',fontsize=fs)
-plt.ylabel('Transmittance',fontsize=fs)
-savefig('Transmittance.png', dpi=300)
+plt.legend(gases) #打出图例
+plt.xlabel('Wavelength (nm)')
+plt.ylabel('Transmittance')
+savefig('Transmittance.png', dpi=300, bbox_inches='tight')
 plt.show()
 
 ## 保存数据

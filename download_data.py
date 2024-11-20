@@ -6,4 +6,5 @@ fetch('H2O', 1, 1, wavenumber_range[0], wavenumber_range[1])
 fetch('CO2', 2, 1, wavenumber_range[0], wavenumber_range[1])
 fetch('CH4', 6, 1, wavenumber_range[0], wavenumber_range[1])
 fetch('N2O', 4, 1, wavenumber_range[0], wavenumber_range[1])
-# 加入别的在该光谱范围有吸收的气体的Name和id，id可以在hapi中查询。
+# 加入别的在该光谱范围有吸收的气体的Name和id，id可以在hapi中查询，也可以用以下函数
+print_iso()
